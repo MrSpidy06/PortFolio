@@ -1,0 +1,6 @@
+node_modules/
+dist/
+.taste-skill/
+.firebase/
+firebase-debug.log
+Abin-Oliver-Portfolio.zip
