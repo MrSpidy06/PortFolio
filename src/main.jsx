@@ -45,6 +45,16 @@ const projects = [
     action: 'Explore EduVista',
     mark: 'EV',
   },
+  {
+    id: 'wednesdayclub',
+    name: 'Wednesday Club Expeditions',
+    type: 'GROUP TRAVEL & TOUR PLANNING',
+    description: 'A travel experience site for student groups, corporate teams, and families, featuring destinations, group trips, and custom package enquiries.',
+    details: ['Group travel', 'Educational & industrial visits', 'Custom packages'],
+    href: 'https://wednesdayclubexpeditions.vercel.app/',
+    action: 'Explore Wednesday Club',
+    mark: 'WC',
+  },
 ];
 
 const skillGroups = [
@@ -271,6 +281,21 @@ function ProjectArt({ project }) {
       </div>
     );
   }
+  if (project.id === 'wednesdayclub') {
+    return (
+      <div className="project-art wednesday-art" aria-hidden="true">
+        <svg className="travel-route" viewBox="0 0 720 420" focusable="false">
+          <path d="M128 292 C180 244 218 317 284 254 S374 205 414 215 S500 124 588 104" />
+          <circle cx="128" cy="292" r="8" /><circle cx="588" cy="104" r="8" />
+        </svg>
+        <span className="travel-stop travel-stop-start">KOCHI</span>
+        <span className="travel-stop travel-stop-end">MUNNAR</span>
+        <span className="project-monogram">{project.mark}</span>
+        <span className="project-art-caption">FIND A ROUTE / MAKE A MEMORY</span>
+        <span className="project-art-index">ORIGINAL Nº 03</span>
+      </div>
+    );
+  }
   return (
     <div className="project-art eduvista-art" aria-hidden="true">
       <span className="edu-sun" /><span className="edu-page edu-page-left" /><span className="edu-page edu-page-right" />
@@ -290,7 +315,7 @@ function Work() {
           number={sections.work.number}
           id="work-title"
           title={<>Made to solve.<br /><span className="serif-accent">Built to matter.</span></>}
-          description="Two projects exploring how thoughtful software can support real people and real work."
+          description="Three builds for different needs: forensic analysis, learning experiences, and memorable group travel."
         />
       </div>
       <div className="originals-list">
@@ -300,7 +325,7 @@ function Work() {
               <ProjectArt project={project} />
             </a>
             <div className="original-copy">
-              <div className="original-label"><span>AO ORIGINAL</span><span>{String(index + 1).padStart(2, '0')} / 02</span></div>
+              <div className="original-label"><span>AO ORIGINAL</span><span>{String(index + 1).padStart(2, '0')} / {String(projects.length).padStart(2, '0')}</span></div>
               <p className="original-type">{project.type}</p>
               <h3>{project.name}</h3>
               <p className="original-description">{project.description}</p>
