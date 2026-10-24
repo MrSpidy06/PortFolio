@@ -285,15 +285,7 @@ function ProjectArt({ project }) {
   if (project.id === 'wednesdayclub') {
     return (
       <div className="project-art wednesday-art" aria-hidden="true">
-        <svg className="travel-route" viewBox="0 0 720 420" focusable="false">
-          <path d="M128 292 C180 244 218 317 284 254 S374 205 414 215 S500 124 588 104" />
-          <circle cx="128" cy="292" r="8" /><circle cx="588" cy="104" r="8" />
-        </svg>
-        <span className="travel-stop travel-stop-start">KOCHI</span>
-        <span className="travel-stop travel-stop-end">MUNNAR</span>
-        <span className="project-monogram">{project.mark}</span>
-        <span className="project-art-caption">FIND A ROUTE / MAKE A MEMORY</span>
-        <span className="project-art-index">ORIGINAL Nº 03</span>
+        <img src="/images/projects/wednesday-club-cover.png" alt="" loading="lazy" />
       </div>
     );
   }
@@ -373,6 +365,13 @@ function Toolkit() {
 }
 
 function Contact() {
+  const contactMethods = [
+    { label: 'WhatsApp', detail: '+91 73561 84379', href: 'https://wa.me/917356184379', icon: 'W' },
+    { label: 'Email', detail: email, href: `mailto:${email}`, icon: '@' },
+    { label: 'GitHub', detail: 'github.com/MrSpidy06', href: socialLinks.github, icon: 'GH', external: true },
+    { label: 'LinkedIn', detail: 'in/abin-oliver', href: socialLinks.linkedin, icon: 'in', external: true },
+  ];
+
   return (
     <section className="finale-section section-wrap" id="contact" aria-labelledby="contact-title">
       <div className="finale-backdrop" aria-hidden="true" />
@@ -382,10 +381,18 @@ function Contact() {
         <p className="finale-description">Have an idea, a project, or a problem worth solving? I’d love to hear about it.</p>
         <a className="button button-primary finale-button" href={`mailto:${email}?subject=Let%E2%80%99s%20build%20something`}>Start a conversation <Arrow /></a>
       </div>
-      <div className="finale-side" data-reveal>
-        <img className="finale-logo" src={brandLogo} alt="Abin Oliver monogram logo" />
-        <span className="finale-side-label">FULL-STACK · AI · CURIOSITY</span>
-      </div>
+      <aside className="contact-panel" aria-label="Contact Abin Oliver" data-reveal>
+        <div className="contact-panel-heading"><span>OPEN CHANNELS</span><h3>Find me<br />around the web.</h3></div>
+        <div className="contact-methods">
+          {contactMethods.map((method) => (
+            <a className="contact-method" key={method.label} href={method.href} target={method.external ? '_blank' : undefined} rel={method.external ? 'noreferrer' : undefined}>
+              <span className="contact-method-icon" aria-hidden="true">{method.icon}</span>
+              <span className="contact-method-copy"><strong>{method.label}</strong><small>{method.detail}</small></span>
+              <Arrow className="contact-method-arrow" />
+            </a>
+          ))}
+        </div>
+      </aside>
     </section>
   );
 }
