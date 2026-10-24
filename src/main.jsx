@@ -58,10 +58,10 @@ const projects = [
 ];
 
 const skillGroups = [
-  { name: 'Web', caption: 'Interfaces & applications', skills: ['React.js'] },
-  { name: 'Backend', caption: 'APIs & application logic', skills: ['Python', 'FastAPI'] },
-  { name: 'Mobile', caption: 'Experiences beyond the browser', skills: ['Flutter', 'Dart'] },
-  { name: 'AI & data', caption: 'Making information useful', skills: ['AI', 'Databases'] },
+  { name: 'Technical Skills', caption: 'Languages, frameworks & foundations', skills: ['Python', 'Java', 'HTML & CSS', 'JavaScript', 'React.js', 'FastAPI', 'SQL & MySQL', 'Data Structures & Algorithms'] },
+  { name: 'Tools & Technologies', caption: 'Tools and platforms I build with', skills: ['Git & GitHub', 'Visual Studio Code', 'Figma', 'Flutter & Dart', 'Android Studio', 'Kotlin', 'Firebase', 'React Native', 'REST API Integration', 'Databases'] },
+  { name: 'Core Skills', caption: 'How I approach challenges and teamwork', skills: ['Problem-Solving', 'Critical Thinking', 'Team Collaboration', 'Analytical Thinking'] },
+  { name: 'Areas of Interest', caption: 'Fields I’m curious to explore further', skills: ['Web Development', 'Mobile App Development', 'Android App Development', 'Artificial Intelligence', 'UI/UX Design'] },
 ];
 
 function Arrow({ className = '' }) {
@@ -353,13 +353,13 @@ function Toolkit() {
         eyebrow={sections.toolkit.eyebrow}
         number={sections.toolkit.number}
         id="toolkit-title"
-        title={<>Tools for the<br /><span className="serif-accent">next idea.</span></>}
-        description="Technologies I’m learning and exploring as I grow across the stack."
+        title={<>Skills for the<br /><span className="serif-accent">next idea.</span></>}
+        description="A growing mix of technical foundations, tools, and the ways I like to solve problems."
       />
       <div className="toolkit-grid">
         {skillGroups.map((group, index) => (
           <article className="toolkit-card" key={group.name} data-reveal>
-            <div className="toolkit-card-top"><span>GENRE {String(index + 1).padStart(2, '0')}</span><span className="toolkit-card-icon" aria-hidden="true">{['⌘', '⌁', '▣', '✳'][index]}</span></div>
+            <div className="toolkit-card-top"><span>CATEGORY {String(index + 1).padStart(2, '0')}</span><span className="toolkit-card-icon" aria-hidden="true">{['⌘', '▣', '✳', '↗'][index]}</span></div>
             <h3>{group.name}</h3>
             <p>{group.caption}</p>
             <ul>{group.skills.map((skill) => <li key={skill}>{skill}</li>)}</ul>
