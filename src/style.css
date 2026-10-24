@@ -43,8 +43,9 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--red-light); out
 .site-header-solid { border-color: rgba(255, 255, 255, 0.08); background: rgba(8, 8, 11, 0.86); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); }
 .header-inner { width: min(100%, 1600px); height: 76px; margin-inline: auto; padding-inline: var(--gutter); display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
 .wordmark { display: inline-flex; align-items: center; gap: 0.72rem; flex: 0 0 auto; }
-.wordmark-icon { display: grid; width: 39px; height: 39px; place-items: center; border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 50%; color: var(--bone); font-family: var(--display); font-size: 1.15rem; letter-spacing: 0.02em; transition: border-color 180ms ease, background 180ms ease; }
-.wordmark:hover .wordmark-icon { border-color: var(--red-light); background: var(--red); }
+.wordmark-icon { display: grid; width: 45px; height: 45px; flex: 0 0 auto; place-items: center; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 50%; background: #050507; transition: border-color 180ms ease, transform 180ms ease; }
+.wordmark-icon img { width: 100%; height: 100%; object-fit: cover; }
+.wordmark:hover .wordmark-icon { border-color: var(--red-light); transform: scale(1.05); }
 .wordmark-copy { display: flex; flex-direction: column; gap: 0.12rem; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; line-height: 1.15; }
 .wordmark-copy span { color: var(--muted); font-size: 0.52rem; letter-spacing: 0.25em; }
 .desktop-nav { display: flex; align-items: center; justify-content: center; gap: clamp(1rem, 2.2vw, 2.5rem); }
@@ -126,6 +127,7 @@ a:hover .arrow { transform: translate(2px, -2px); }
 .explore-toolkit::after { background: radial-gradient(ellipse at 85% 18%, rgba(29, 73, 79, 0.7), transparent 44%), linear-gradient(130deg, #0d1517, #1d2b2d); }
 .explore-card-index { position: relative; z-index: 1; color: #d8d2d4; font-size: 0.53rem; font-weight: 700; letter-spacing: 0.18em; }
 .explore-card-art { position: absolute; top: 50%; right: 0.45rem; color: rgba(255,255,255,0.1); font-family: var(--display); font-size: clamp(5.8rem, 11vw, 10rem); line-height: 0.8; transform: translateY(-53%); transition: transform 450ms var(--ease-cine), color 250ms ease; }
+.explore-card-art img { display: block; width: clamp(6.4rem, 12vw, 10rem); height: clamp(6.4rem, 12vw, 10rem); border-radius: 50%; object-fit: cover; opacity: 0.72; }
 .explore-card:hover .explore-card-art { color: rgba(255,255,255,0.18); transform: translateY(-53%) scale(1.06) rotate(-3deg); }
 .explore-card-play { position: absolute; top: 40%; left: 1.1rem; display: grid; width: 36px; height: 36px; place-items: center; border: 1px solid rgba(255,255,255,0.45); border-radius: 50%; background: rgba(0,0,0,0.3); color: white; font-size: 0.58rem; opacity: 0; transform: scale(0.82); transition: opacity 180ms ease, transform 180ms ease; }
 .explore-card:hover .explore-card-play, .explore-card:focus-visible .explore-card-play { opacity: 1; transform: scale(1); }
@@ -150,8 +152,7 @@ a:hover .arrow { transform: translate(2px, -2px); }
 .about-stamp::before, .about-stamp::after { position: absolute; inset: 8%; border: 1px solid rgba(255,255,255,0.08); border-radius: 50%; content: ''; }
 .about-stamp::after { inset: 17%; border-color: rgba(229,9,39,0.27); }
 .stamp-top, .stamp-bottom { position: relative; z-index: 1; color: #aaa6ae; font-size: 0.53rem; font-weight: 700; letter-spacing: 0.28em; }
-.stamp-ao { position: relative; z-index: 1; margin: -0.08em 0; color: var(--bone); font-family: var(--display); font-size: clamp(6rem, 10vw, 9.5rem); line-height: 0.9; }
-.stamp-ao span { color: var(--red-light); }
+.stamp-logo { position: relative; z-index: 1; width: 70%; aspect-ratio: 1; border-radius: 50%; object-fit: cover; box-shadow: 0 15px 45px rgba(0,0,0,0.35); }
 .about-copy { max-width: 770px; }
 .about-copy p { max-width: 62ch; margin: 0 0 1.15rem; color: #b5b1b8; font-size: 0.94rem; line-height: 1.85; }
 .about-copy .about-lead { margin-bottom: 1.6rem; color: var(--bone); font-size: clamp(1.25rem, 2.2vw, 1.85rem); font-weight: 500; letter-spacing: -0.035em; line-height: 1.35; }
@@ -215,7 +216,8 @@ a:hover .arrow { transform: translate(2px, -2px); }
 .edu-page-right { right: 26%; border-radius: 12% 70% 7% 6%; transform: skewY(-8deg) rotate(5deg); }
 .original-copy { display: flex; align-items: flex-start; justify-content: center; flex-direction: column; padding: clamp(0.3rem, 2vw, 1.5rem) clamp(0rem, 1vw, 1rem) clamp(0.3rem, 2vw, 1.5rem) 0; }
 .original-label { display: flex; width: 100%; justify-content: space-between; color: #b8b3bc; font-size: 0.52rem; font-weight: 700; letter-spacing: 0.16em; }
-.original-label span:first-child { color: var(--red-light); }
+.original-brand { display: inline-flex; align-items: center; gap: 0.35rem; color: var(--red-light); }
+.original-brand img { width: 22px; height: 22px; border-radius: 50%; object-fit: cover; }
 .original-type { margin: clamp(1.8rem, 3.5vw, 3rem) 0 0.55rem; color: #a4a0a9; font-size: 0.57rem; font-weight: 700; letter-spacing: 0.18em; }
 .original-copy h3 { margin: 0; font-family: var(--display); font-size: clamp(3rem, 5.3vw, 5.5rem); font-weight: 400; letter-spacing: 0.02em; line-height: 0.92; }
 .original-description { max-width: 51ch; margin: 1rem 0 0; color: #b8b4bd; font-size: 0.84rem; line-height: 1.8; }
@@ -246,15 +248,15 @@ a:hover .arrow { transform: translate(2px, -2px); }
 .finale-button { background: var(--red); color: white; }
 .finale-button:hover { background: #fa193b; }
 .finale-side { display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 0.5rem; }
-.finale-mark { color: rgba(255,255,255,0.86); font-family: var(--display); font-size: clamp(6rem, 13vw, 12rem); line-height: 0.8; }
-.finale-mark span { color: var(--red-light); }
+.finale-logo { width: clamp(125px, 15vw, 205px); aspect-ratio: 1; border-radius: 50%; object-fit: cover; box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
 .finale-side-label { color: #a49ca5; font-size: 0.48rem; font-weight: 700; letter-spacing: 0.2em; }
 
 /* Footer */
 .site-footer { overflow: hidden; padding-top: 2rem; background: #07070a; }
 .footer-top { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.09); }
-.footer-wordmark { color: var(--bone); font-family: var(--display); font-size: 1.8rem; letter-spacing: 0.02em; }
-.footer-wordmark span { color: var(--red-light); }
+.footer-wordmark { display: inline-flex; width: 58px; height: 58px; overflow: hidden; border: 1px solid rgba(255,255,255,0.16); border-radius: 50%; background: #050507; transition: border-color 180ms ease, transform 180ms ease; }
+.footer-wordmark img { width: 100%; height: 100%; object-fit: cover; }
+.footer-wordmark:hover { border-color: var(--red-light); transform: translateY(-2px); }
 .footer-top p, .back-top { margin: 0; color: #b8b3bc; font-size: 0.64rem; }
 .back-top { transition: color 180ms ease; }
 .back-top:hover { color: var(--red-light); }
@@ -306,7 +308,7 @@ a:hover .arrow { transform: translate(2px, -2px); }
 @media (max-width: 760px) {
   :root { --gutter: 1.25rem; }
   .header-inner { height: 66px; gap: 0.7rem; }
-  .wordmark-icon { width: 35px; height: 35px; }
+  .wordmark-icon { width: 40px; height: 40px; }
   .wordmark-copy { font-size: 0.65rem; }
   .desktop-nav { display: none; }
   .header-actions { margin-left: auto; }
@@ -355,7 +357,7 @@ a:hover .arrow { transform: translate(2px, -2px); }
   .section-heading-main > p { margin-top: 0.9rem; font-size: 0.8rem; }
   .about-grid { grid-template-columns: 1fr; gap: 2.2rem; padding-top: 2rem; }
   .about-stamp { width: min(72vw, 275px); justify-self: start; }
-  .stamp-ao { font-size: 7rem; }
+  .stamp-logo { width: 70%; }
   .about-copy p { font-size: 0.83rem; }
   .about-copy .about-lead { font-size: 1.28rem; }
   .about-signoff { font-size: 0.54rem; }
@@ -387,7 +389,7 @@ a:hover .arrow { transform: translate(2px, -2px); }
   .finale-content h2 { font-size: clamp(4.3rem, 17vw, 6.5rem); }
   .finale-description { max-width: 38ch; font-size: 0.78rem; }
   .finale-side { position: absolute; right: 1.4rem; bottom: 2rem; opacity: 0.34; }
-  .finale-mark { font-size: 5rem; }
+  .finale-logo { width: 105px; }
   .finale-side-label { font-size: 0.4rem; }
   .footer-top { flex-wrap: wrap; padding-bottom: 1.1rem; }
   .footer-top p { order: 3; width: 100%; font-size: 0.58rem; }

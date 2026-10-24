@@ -4,6 +4,7 @@ import './style.css';
 import './firebase.js';
 
 const portrait = '/images/abin-oliver.jpeg';
+const brandLogo = '/images/abin-oliver-logo.png';
 const email = 'abinoliver258@gmail.com';
 const socialLinks = {
   github: 'https://github.com/MrSpidy06',
@@ -88,7 +89,7 @@ function Header({ order, active, profile, onOpenProfiles, menuOpen, setMenuOpen 
     <header className={`site-header ${scrolled || menuOpen ? 'site-header-solid' : ''}`}>
       <div className="header-inner">
         <a className="wordmark" href="#home" aria-label="Abin Oliver, home" onClick={closeMenu}>
-          <span className="wordmark-icon">AO</span><span className="wordmark-copy">ABIN OLIVER<span> ORIGINALS</span></span>
+          <span className="wordmark-icon"><img src={brandLogo} alt="" /></span><span className="wordmark-copy">ABIN OLIVER<span> ORIGINALS</span></span>
         </a>
         <nav className="desktop-nav" aria-label="Main navigation">
           <SectionLink id="home" className={active === 'home' ? 'nav-active' : ''}>Home</SectionLink>
@@ -156,7 +157,7 @@ function Hero({ onOpenProfiles }) {
 }
 
 const exploreCards = [
-  { id: 'about', episode: 'EPISODE 01', title: 'The Pilot', note: 'A little about me', icon: 'AO', tone: 'pilot' },
+  { id: 'about', episode: 'EPISODE 01', title: 'The Pilot', note: 'A little about me', tone: 'pilot' },
   { id: 'journey', episode: 'EPISODE 02', title: 'The Journey', note: 'How I like to build', icon: '↗', tone: 'journey' },
   { id: 'work', episode: 'EPISODE 03', title: 'The Originals', note: 'Projects with purpose', icon: '03', tone: 'originals' },
   { id: 'toolkit', episode: 'EPISODE 04', title: 'The Toolkit', note: 'What I’m exploring', icon: '{ }', tone: 'toolkit' },
@@ -187,7 +188,7 @@ function ContinueExploring({ order }) {
           {orderedCards.map((card, index) => (
             <SectionLink key={card.id} id={card.id} className={`explore-card explore-${card.tone}`}>
               <span className="explore-card-index">{card.episode}</span>
-              <span className="explore-card-art" aria-hidden="true">{card.icon}</span>
+              <span className="explore-card-art" aria-hidden="true">{card.id === 'about' ? <img src={brandLogo} alt="" /> : card.icon}</span>
               <span className="explore-card-play" aria-hidden="true">▶</span>
               <span className="explore-card-copy"><strong>{card.title}</strong><small>{card.note}</small></span>
               <span className="explore-progress" aria-hidden="true"><i style={{ width: `${activeCard === index ? 48 : 22}%` }} /></span>
@@ -225,7 +226,7 @@ function About() {
       <div className="about-grid">
         <div className="about-stamp" data-reveal>
           <span className="stamp-top">ABIN OLIVER</span>
-          <span className="stamp-ao">AO<span>·</span></span>
+          <img className="stamp-logo" src={brandLogo} alt="Abin Oliver monogram logo" />
           <span className="stamp-bottom">THINK · BUILD · LEARN</span>
         </div>
         <div className="about-copy" data-reveal>
@@ -332,7 +333,7 @@ function Work() {
               <ProjectArt project={project} />
             </a>
             <div className="original-copy">
-              <div className="original-label"><span>AO ORIGINAL</span><span>{String(index + 1).padStart(2, '0')} / {String(projects.length).padStart(2, '0')}</span></div>
+              <div className="original-label"><span className="original-brand"><img src={brandLogo} alt="" /> ORIGINAL</span><span>{String(index + 1).padStart(2, '0')} / {String(projects.length).padStart(2, '0')}</span></div>
               <p className="original-type">{project.type}</p>
               <h3>{project.name}</h3>
               <p className="original-description">{project.description}</p>
@@ -382,7 +383,7 @@ function Contact() {
         <a className="button button-primary finale-button" href={`mailto:${email}?subject=Let%E2%80%99s%20build%20something`}>Start a conversation <Arrow /></a>
       </div>
       <div className="finale-side" data-reveal>
-        <span className="finale-mark">AO<span>.</span></span>
+        <img className="finale-logo" src={brandLogo} alt="Abin Oliver monogram logo" />
         <span className="finale-side-label">FULL-STACK · AI · CURIOSITY</span>
       </div>
     </section>
@@ -393,7 +394,7 @@ function Footer() {
   return (
     <footer className="site-footer">
       <div className="footer-top section-wrap">
-        <a className="footer-wordmark" href="#home">AO<span>.</span></a>
+        <a className="footer-wordmark" href="#home" aria-label="Abin Oliver, back to top"><img src={brandLogo} alt="" /></a>
         <p>Think creatively. Code passionately.</p>
         <a href="#home" className="back-top">Back to top ↑</a>
       </div>
