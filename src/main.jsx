@@ -296,6 +296,13 @@ function ProjectArt({ project }) {
       </div>
     );
   }
+  if (project.id === 'eduvista') {
+    return (
+      <div className="project-art eduvista-photo" aria-hidden="true">
+        <img src="/images/projects/eduvista-cover.jpg" alt="" loading="lazy" />
+      </div>
+    );
+  }
   return (
     <div className="project-art eduvista-art" aria-hidden="true">
       <span className="edu-sun" /><span className="edu-page edu-page-left" /><span className="edu-page edu-page-right" />

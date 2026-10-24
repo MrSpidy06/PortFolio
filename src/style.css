@@ -185,6 +185,9 @@ a:hover .arrow { transform: translate(2px, -2px); }
 .crimelens-art::before { background-image: linear-gradient(120deg, rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 50px 50px; mask-image: radial-gradient(ellipse, black, transparent 76%); }
 .eduvista-art { background: radial-gradient(ellipse at 50% 25%, rgba(174,119,56,0.52), transparent 43%), linear-gradient(145deg, #211813, #2e2520 55%, #120f0e); }
 .eduvista-art::before { background-image: linear-gradient(90deg, transparent 49.5%, rgba(255,255,255,0.05) 50%, transparent 50.5%), linear-gradient(0deg, transparent 49.5%, rgba(255,255,255,0.04) 50%, transparent 50.5%); background-size: 70px 70px; mask-image: radial-gradient(ellipse, black, transparent 72%); }
+.eduvista-photo { background: #050b39; }
+.eduvista-photo::before, .eduvista-photo::after { display: none; }
+.eduvista-photo img { display: block; width: 100%; height: 100%; object-fit: contain; }
 .wednesday-art { background: radial-gradient(ellipse at 68% 38%, rgba(190,169,116,0.28), transparent 42%), linear-gradient(145deg, #13221e, #20332c 54%, #101714); }
 .wednesday-art::before { background-image: repeating-radial-gradient(ellipse at 28% 65%, transparent 0 28px, rgba(211,207,169,0.16) 29px 30px, transparent 31px 53px); mask-image: radial-gradient(ellipse, black, transparent 78%); }
 .travel-route { position: absolute; z-index: 1; inset: 10% 8% 12%; width: 84%; height: 78%; overflow: visible; }
