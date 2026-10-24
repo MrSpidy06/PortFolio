@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import './style.css';
 import './firebase.js';
 
-const portrait = '/images/abin-oliver.png';
+const portrait = '/images/abin-oliver.jpeg';
 const email = 'abinoliver258@gmail.com';
 const socialLinks = {
   github: 'https://github.com/MrSpidy06',
