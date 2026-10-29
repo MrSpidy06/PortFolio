@@ -192,6 +192,25 @@ a:hover .arrow { transform: translate(2px, -2px); }
 .wednesday-art { background: #050505; }
 .wednesday-art::before, .wednesday-art::after { display: none; }
 .wednesday-art img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.medassist-art { background: radial-gradient(ellipse at 70% 42%, rgba(52,174,168,0.18), transparent 46%), linear-gradient(145deg, #071719, #10282a 55%, #081416); }
+.medassist-art::before { background-image: linear-gradient(rgba(162,226,215,0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(162,226,215,0.045) 1px, transparent 1px); background-size: 38px 38px; mask-image: radial-gradient(ellipse, black, transparent 74%); }
+.medassist-glow { position: absolute; top: 14%; right: 16%; width: 200px; aspect-ratio: 1; border-radius: 50%; background: rgba(43,202,184,0.12); filter: blur(50px); }
+.medassist-dashboard { position: relative; z-index: 1; width: min(78%, 480px); padding: clamp(1rem, 3vw, 1.7rem); border: 1px solid rgba(190,237,226,0.2); border-radius: 12px; background: linear-gradient(145deg, rgba(17,45,46,0.94), rgba(8,22,25,0.96)); box-shadow: 0 24px 70px rgba(0,0,0,0.36), inset 0 1px rgba(255,255,255,0.04); transform: rotate(-2deg); }
+.medassist-dashboard-top, .medassist-dashboard-bottom { display: flex; align-items: center; justify-content: space-between; color: #84b4ad; font-size: 0.44rem; font-weight: 700; letter-spacing: 0.15em; }
+.medassist-live-dot { width: 7px; height: 7px; border-radius: 50%; background: #63d9b5; box-shadow: 0 0 14px rgba(99,217,181,0.6); }
+.medassist-dashboard-title { display: flex; align-items: center; gap: 0.8rem; margin-top: 1.5rem; }
+.medassist-cross { display: grid; width: 42px; height: 42px; place-items: center; border: 1px solid rgba(116,226,202,0.4); border-radius: 12px; color: #8af0d3; font-size: 2rem; line-height: 1; }
+.medassist-dashboard-title > span:last-child, .medassist-metric-row > span { display: flex; flex-direction: column; gap: 0.25rem; }
+.medassist-dashboard-title strong { color: #eef8f4; font-family: var(--display); font-size: clamp(1.35rem, 2.4vw, 2rem); font-weight: 400; }
+.medassist-dashboard-title small, .medassist-metric-row small { color: #86a8a4; font-size: 0.52rem; }
+.medassist-metric-row { display: flex; gap: 2rem; margin-top: 1.4rem; padding: 0.8rem 0; border-top: 1px solid rgba(190,237,226,0.11); border-bottom: 1px solid rgba(190,237,226,0.11); }
+.medassist-metric-row strong { color: #ecf8f3; font-size: 0.92rem; }
+.medassist-metric-row strong i { color: #91bdb5; font-size: 0.55rem; font-style: normal; }
+.medassist-metric-row .medassist-good { color: #76ddbc; font-size: 0.7rem; }
+.medassist-pulse { display: block; width: 100%; margin: 0.7rem 0 0.5rem; }
+.medassist-pulse path { fill: none; stroke: #70dfc0; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0 0 5px rgba(112,223,192,0.38)); }
+.medassist-dashboard-bottom { padding-top: 0.7rem; border-top: 1px solid rgba(190,237,226,0.11); font-size: 0.39rem; }
+.medassist-dashboard-bottom span:last-child { color: #7fdbbf; }
 .travel-route { position: absolute; z-index: 1; inset: 10% 8% 12%; width: 84%; height: 78%; overflow: visible; }
 .travel-route path { fill: none; stroke: rgba(226,205,150,0.74); stroke-width: 3; stroke-dasharray: 7 10; }
 .travel-route circle { fill: #ead7a4; stroke: rgba(15,28,24,0.8); stroke-width: 5; }
@@ -381,6 +400,7 @@ a:hover .arrow { transform: translate(2px, -2px); }
   .original-card, .original-card:nth-child(even) { width: calc(100% - var(--gutter) - var(--gutter)); grid-template-columns: 1fr; gap: 1.25rem; padding: 0.75rem; }
   .original-card:nth-child(even) .original-art-link, .original-card:nth-child(even) .original-copy { order: initial; }
   .project-art { min-height: 260px; }
+  .medassist-dashboard { width: 86%; padding: 0.95rem; }
   .project-monogram { font-size: clamp(7rem, 27vw, 10rem); }
   .original-copy { padding: 0.2rem 0.4rem 0.75rem; }
   .original-label { font-size: 0.46rem; }

@@ -56,6 +56,16 @@ const projects = [
     action: 'Explore Wednesday Club',
     mark: 'WC',
   },
+  {
+    id: 'medassist',
+    name: 'MedAssist AI',
+    type: 'HEALTHCARE COMPANION PROTOTYPE',
+    description: 'A healthcare companion prototype bringing health records and everyday readings together with a clinician review workspace.',
+    details: ['Health records', 'Everyday readings', 'Clinician review'],
+    href: 'https://medassist-1bb76.web.app/',
+    action: 'Explore MedAssist AI',
+    mark: 'MA',
+  },
 ];
 
 const skillGroups = [
@@ -296,6 +306,22 @@ function ProjectArt({ project }) {
       </div>
     );
   }
+  if (project.id === 'medassist') {
+    return (
+      <div className="project-art medassist-art" aria-hidden="true">
+        <span className="medassist-glow" />
+        <div className="medassist-dashboard">
+          <div className="medassist-dashboard-top"><span>MY HEALTH OVERVIEW</span><span className="medassist-live-dot" /></div>
+          <div className="medassist-dashboard-title"><span className="medassist-cross">+</span><span><strong>Care, connected.</strong><small>Your health at a glance</small></span></div>
+          <div className="medassist-metric-row"><span><small>HEART RATE</small><strong>72 <i>BPM</i></strong></span><span><small>STATUS</small><strong className="medassist-good">Looking good</strong></span></div>
+          <svg className="medassist-pulse" viewBox="0 0 520 110" focusable="false"><path d="M0 62h92l26-1 24-38 32 72 39-91 38 63 26-5 20 0 21-1 22 0 20 0 22 0 23 0 20 0 22 0 22 0 23 0" /></svg>
+          <div className="medassist-dashboard-bottom"><span>RECENT READINGS</span><span>REVIEW WITH CARE ↗</span></div>
+        </div>
+        <span className="project-art-caption">YOUR HEALTH / IN ONE PLACE</span>
+        <span className="project-art-index">ORIGINAL Nº 04</span>
+      </div>
+    );
+  }
   return (
     <div className="project-art eduvista-art" aria-hidden="true">
       <span className="edu-sun" /><span className="edu-page edu-page-left" /><span className="edu-page edu-page-right" />
@@ -315,7 +341,7 @@ function Work() {
           number={sections.work.number}
           id="work-title"
           title={<>Made to solve.<br /><span className="serif-accent">Built to matter.</span></>}
-          description="Three builds for different needs: forensic analysis, learning experiences, and memorable group travel."
+          description="Four builds for different needs: forensic analysis, learning, group travel, and connected healthcare."
         />
       </div>
       <div className="originals-list">
