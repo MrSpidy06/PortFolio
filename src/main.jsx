@@ -317,8 +317,6 @@ function ProjectArt({ project }) {
           <svg className="medassist-pulse" viewBox="0 0 520 110" focusable="false"><path d="M0 62h92l26-1 24-38 32 72 39-91 38 63 26-5 20 0 21-1 22 0 20 0 22 0 23 0 20 0 22 0 22 0 23 0" /></svg>
           <div className="medassist-dashboard-bottom"><span>RECENT READINGS</span><span>REVIEW WITH CARE ↗</span></div>
         </div>
-        <span className="project-art-caption">YOUR HEALTH / IN ONE PLACE</span>
-        <span className="project-art-index">ORIGINAL Nº 04</span>
       </div>
     );
   }
